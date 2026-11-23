@@ -1,0 +1,12 @@
+,Coef,Odds_Ratio,CI_Lower,CI_Upper,p_value,Sig,Hypothesis
+Log2_Target_c,-0.474,0.623,0.603,0.643,0.0,***,H1
+Duration_10_c,-0.164,0.848,0.803,0.897,0.0,***,H2
+Target_x_Duration,-0.035,0.966,0.943,0.989,0.004,**,H3
+Prev_Success_Bool,1.145,3.142,2.738,3.606,0.0,***,H4
+Images_Bool,0.091,1.096,0.92,1.304,0.304,,H5
+Videos_Bool,-0.046,0.955,0.825,1.107,0.545,,H5
+Rewards,0.098,1.103,1.087,1.119,0.0,***,H5
+Cat_Creative_Arts,-0.34,0.712,0.612,0.829,0.0,***,Control
+Cat_Design,-0.046,0.955,0.81,1.125,0.581,,Control
+Cat_Food,-0.236,0.79,0.597,1.045,0.099,,Control
+Cat_Literature_Journalism,-0.005,0.995,0.833,1.19,0.959,,Control

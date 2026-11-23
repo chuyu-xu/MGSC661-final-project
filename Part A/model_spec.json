@@ -1,0 +1,34 @@
+{
+  "centering": {
+    "mean_log2_target": 11.222109725523774,
+    "mean_duration_10": 3.0168443852049314
+  },
+  "predictors": [
+    "Log2_Target_c",
+    "Duration_10_c",
+    "Target_x_Duration",
+    "Prev_Success_Bool",
+    "Images_Bool",
+    "Videos_Bool",
+    "Rewards",
+    "Cat_Creative_Arts",
+    "Cat_Design",
+    "Cat_Food",
+    "Cat_Literature_Journalism"
+  ],
+  "coefficients": {
+    "const": 0.963631928216874,
+    "Log2_Target_c": -0.47391396068125374,
+    "Duration_10_c": -0.16435164526157856,
+    "Target_x_Duration": -0.03482508241724745,
+    "Prev_Success_Bool": 1.1450145049405973,
+    "Images_Bool": 0.0913447985359369,
+    "Videos_Bool": -0.04554781432828516,
+    "Rewards": 0.09783160800749006,
+    "Cat_Creative_Arts": -0.33969613859495473,
+    "Cat_Design": -0.04631772634522677,
+    "Cat_Food": -0.2357785249567607,
+    "Cat_Literature_Journalism": -0.004687291048228975
+  },
+  "notes": "Duration is in 10-day units. Log2_Target = log2(goal in USD). Reference category: Media & Entertainment. Target_x_Duration = Log2_Target_c * Duration_10_c."
+}
