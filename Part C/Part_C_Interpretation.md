@@ -30,7 +30,8 @@ Results come from Part A's final logistic model, fitted on the training set (n =
 | 75th pct ($7,806) | 78.1% | 71.8% | 64.5% |
 
 **Key points**
-- **H3 is supported:** interaction OR 0.97 (p = 0.004). The likelihood-ratio test also favors keeping the interaction (p = 0.004).
+- **H3 is supported in the main model:** interaction OR 0.97 (p = 0.004). The likelihood-ratio test also favors keeping the interaction (p = 0.004).
+- **But it is fragile (Part D):** dropping the 20 most influential campaigns raises p to 0.105, and dropping goals under $100 or over $1M raises it to 0.43. So the interaction is driven largely by extreme goals.
 - **Effect of +10 days on the odds:**
   - small goal: −10%;
   - median goal: −16%;
@@ -39,7 +40,7 @@ Results come from Part A's final logistic model, fitted on the training set (n =
   - only about 2 points of success probability for a small goal;
   - about 14 points for a large goal.
 
-**Speaker notes (~45 s):** "This was the hypothesis we added after the PoC. Because goal and duration are correlated, we let the effect of duration depend on the goal. The lines show it clearly. For a small goal, the line is almost flat, so duration barely matters. For a large goal, stretching from 15 to 45 days drops the predicted success rate from 78% to 65%. A long campaign seems to signal weak demand, and that matters most when the creator is asking for a lot."
+**Speaker notes (~45 s):** "This was the hypothesis we added after the PoC. Because goal and duration are correlated, we let the effect of duration depend on the goal. The lines show it clearly. For a small goal, the line is almost flat, so duration barely matters. For a large goal, stretching from 15 to 45 days drops the predicted success rate from 78% to 65%. A long campaign seems to signal weak demand, and that matters most when the creator is asking for a lot. One caution from our diagnostics: this interaction depends heavily on campaigns with extreme goals, so we treat it as suggestive rather than conclusive. The main effects of goal and duration, on the other hand, are robust."
 
 ---
 
@@ -67,11 +68,11 @@ Results come from Part A's final logistic model, fitted on the training set (n =
 |---|---|---|---|
 | H1 | Higher goal → lower success | OR 0.62 per doubling (p<0.001) | Supported |
 | H2 | Longer duration → lower success | OR 0.85 per +10 days (p<0.001) | Supported |
-| H3 | Duration hurts more for high goals | Interaction OR 0.97 (p=0.004); LR test p=0.004 | Supported |
+| H3 | Duration hurts more for high goals | OR 0.97 (p=0.004); p=0.43 without extreme goals | Supported in main model, not robust |
 | H4 | Previous success → higher success | OR 3.14 (p<0.001) | Supported |
 | H5 | Richer page → higher success | Reward tiers OR 1.10 (p<0.001); images and video n.s. | Partly supported |
 
-**Honest caveat to mention:** H3 is statistically significant, but it adds very little predictive power (test AUC 0.814 with the interaction vs 0.813 without, from Part B). Its value is in explanation and advice, not in better prediction.
+**Honest caveat to mention:** H3 is significant in the main model, but it is not robust: it loses significance when extreme goals are removed (Part D), and it adds almost no predictive power (test AUC 0.814 vs 0.813, Part B). We report it as suggestive. H1, H2, H4 and the reward-tier effect are robust in every check.
 
 ---
 
@@ -104,5 +105,5 @@ Results come from Part A's final logistic model, fitted on the training set (n =
 - **最有亮点的两处：**
   - Slide 2：H3 是 PoC 之后新加的假设，结果被支持。
   - Slide 1 里 Creative Arts 的"反转"：原始成功率最高，控制目标和创作者历史后反而更低。这一条很能体现 insight。
-- **主动承认交互项的局限：**交互项显著，但对 AUC 几乎没有提升。主动讲出来，体现严谨。
+- **主动承认交互项的局限：**交互项在主模型里显著，但去掉极端目标后就不显著了（D 的稳健性检验），对 AUC 也几乎没有提升。讲成"有迹象但不稳健（suggestive）"。
 - **所有概率的前提：**都是在"典型首次创作者"这个画像下算的，图下面已经注明了。
