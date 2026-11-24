@@ -1,0 +1,6 @@
+Hypothesis,Prediction,Evidence,Verdict
+H1,Higher goal → lower success (−),"OR 0.62 per doubling (-38% odds), p<0.001",Supported
+H2,Longer duration → lower success (−),"OR 0.85 per +10 days (-15% odds), p<0.001",Supported
+H3,Duration penalty stronger for high goals,"Interaction OR 0.97, p=0.004; LR test p=0.004",Supported
+H4,Previous success → higher success (+),"OR 3.14 (+214% odds), p<0.001",Supported
+H5,Richer presentation → higher success (+),"Rewards OR 1.10 per tier (p<0.001); images p=0.30, video p=0.55",Partly supported
